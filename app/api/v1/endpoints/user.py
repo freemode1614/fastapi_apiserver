@@ -1,9 +1,10 @@
 from fastapi import APIRouter
-from app.api.v1.schemas.user import UserCreate
-
-route = APIRouter(prefix="/users")
+from fastapi.responses import JSONResponse
 
 
-@route.post("/user")
-async def create_user(user: UserCreate):
-    pass
+route = APIRouter(prefix="/user")
+
+
+@route.get("/user")
+async def create_user():
+    return JSONResponse(content={"name": "Lei Wen Peng"})
